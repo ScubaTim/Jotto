@@ -25,5 +25,7 @@ test('renders no text when success prop is false', () => {
 })
 
 test('renders text when success prop is true', () => {
-
+    const wrapper = setup({ success: true })
+    const component = findByTestAttr(wrapper, 'component-congrats')
+    expect(component.text().length).not.toBe(0)
 })

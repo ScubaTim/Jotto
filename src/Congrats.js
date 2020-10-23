@@ -1,9 +1,18 @@
 import React from 'react';
 
-const Congrats = () => {
-    return (
-        <h2 data-test="congrats-component">Congrats!</h2>
-    )
+const Congrats = (props) => {
+
+    if (props.success) {
+        return (
+            <div data-test="component-congrats">
+                <span data-test="congrats-message">
+                    Congrats! You Guessed the Word!
+                </span>
+            </div>
+        )
+    } else {
+        return <div data-test="component-congrats" />
+    }
 }
 
 export default Congrats;
